@@ -12,10 +12,11 @@
 <body>
     <h1>Olá, Mundo!</h1>
     <p>Bem-vindo ao seu primeiro projeto web!</p>
+    <button id="btnMagico">Clica em mim!</button>
 </body>
 <script type="module">
-    import {posts} from './assets/js/main.js';
-    document.addEventListener('DOMContentLoaded', () => {
+    import { posts } from './assets/js/main.js';
+    document.querySelector("#btnMagico").addEventListener("click", (el) => {
         posts()
             .then(async data => {
                 let response = await data.json();
@@ -30,7 +31,8 @@
             .catch(err => {
                 console.log(err);
             })
-    })
+    });
+
 </script>
 
 </html>
